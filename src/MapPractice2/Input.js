@@ -1,6 +1,5 @@
 import React from 'react'
 import InputForm from './InputForm'
-import PhoneInfo from './PhoneInfo'
 import PhoneList from './PhoneList'
 
 export default class Input extends React.Component {

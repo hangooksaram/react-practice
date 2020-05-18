@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import {Route, NavLink} from 'react-router-dom'
 import Props from './Props'
-import Class from './Class'
-import EventPractice from './EventPractice'
 
 class ClassComponent extends Component{
     render(){
@@ -31,6 +29,8 @@ export default class Home extends Component {
                     <NavLink style = {{backgroundColor : 'green', color : 'white'}}to = "/input">input</NavLink>
                     <NavLink style = {{backgroundColor : 'yellow', color : 'white'}} to = "/say">say</NavLink>
                     <NavLink style = {{backgroundColor : 'pink', color : 'white'}} to = "/event">eventpractice</NavLink>
+                    <NavLink style = {{backgroundColor : 'black', color : 'white'}} to = "/validation">ref</NavLink>
+                    <NavLink style = {{backgroundColor : 'orange', color : 'white'}} to = "/iteration">map</NavLink>
             </Route>
                 <Props>children</Props>
         </div>

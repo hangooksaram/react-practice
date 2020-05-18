@@ -1,5 +1,6 @@
 import React from 'react'
 import EventPracticeComponent from './EventPracticeComponent'
+import EventPracticeFunction from './EventPracticeFunction'
 
 class EventPractice extends React.Component{
     render(){
@@ -7,6 +8,7 @@ class EventPractice extends React.Component{
             <div>
                 <h1>
                     <EventPracticeComponent/>
+                    <EventPracticeFunction/>
                 </h1>
             </div>
         )
