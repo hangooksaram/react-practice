@@ -21,18 +21,21 @@ export default class Home extends Component {
         return(
         <div>
             <Route>
+            <Props>children</Props><br></br>
                 <ClassComponent name = "class"/>
                 <NavLink style = {{backgroundColor : 'black', color : 'white'}} to = "/class"> 이동</NavLink>
                 <FunctionComponent name = "function"/>
-                    <NavLink style = {{backgroundColor : 'red', color : 'white'}} to = "/state">state</NavLink>
-                    <NavLink style = {{backgroundColor : 'blue', color : 'white'}} to = "/props">props</NavLink>
-                    <NavLink style = {{backgroundColor : 'green', color : 'white'}}to = "/input">input</NavLink>
-                    <NavLink style = {{backgroundColor : 'yellow', color : 'white'}} to = "/say">say</NavLink>
-                    <NavLink style = {{backgroundColor : 'pink', color : 'white'}} to = "/event">eventpractice</NavLink>
-                    <NavLink style = {{backgroundColor : 'black', color : 'white'}} to = "/validation">ref</NavLink>
-                    <NavLink style = {{backgroundColor : 'orange', color : 'white'}} to = "/iteration">map</NavLink>
+                    <ul><NavLink to = "/state">state</NavLink></ul>
+                    <ul><NavLink to = "/props">props</NavLink></ul>
+                    <ul><NavLink to = "/input">input</NavLink></ul>
+                    <ul><NavLink to = "/say">say</NavLink></ul>
+                    <ul><NavLink to = "/event">eventpractice</NavLink></ul>
+                    <ul><NavLink to = "/validation">ref</NavLink></ul>
+                    <ul><NavLink to = "/iteration">map</NavLink></ul>
+                    <ul><NavLink to = "/info">useEffect</NavLink></ul>
+                    <ul><NavLink to = "/reducer">useReducer</NavLink></ul>
+                    <ul><NavLink to = "/average">useMemo</NavLink></ul>
             </Route>
-                <Props>children</Props>
         </div>
         )
     }
