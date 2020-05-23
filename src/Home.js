@@ -35,6 +35,7 @@ export default class Home extends Component {
                     <ul><NavLink to = "/info">useEffect</NavLink></ul>
                     <ul><NavLink to = "/reducer">useReducer</NavLink></ul>
                     <ul><NavLink to = "/average">useMemo</NavLink></ul>
+                    <ul><NavLink to = "/map">map</NavLink></ul>
             </Route>
         </div>
         )
