@@ -19,6 +19,7 @@ const AverageComponent = () => {
 
     const onChange = useCallback(e => {
         setNumber(e.target.value);
+        console.log(e.target.value);
     }, []);
 
     const onInsert = useCallback (e => {
