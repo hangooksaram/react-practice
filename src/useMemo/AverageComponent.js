@@ -27,7 +27,7 @@ const AverageComponent = () => {
         setList(NextList);
         setNumber('');
         inputEl.current.focus();
-    }, [number,list])
+    }, [number, list])
 
 
     const avg = useMemo(()=> getAverage(list), [list])
