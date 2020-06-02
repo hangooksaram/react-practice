@@ -34,7 +34,7 @@ const AverageComponent = () => {
     return(
         <div>
             <input value = {number} onChange = {onChange} ref = {inputEl}/>
-            <button onClick = {onInsert}>등록</button>
+            <button onClick = {onInsert}>등록!</button>
             <ul>
                 {list.map((value, index) => (<li key = {index}>{value}</li>))}
             </ul>
