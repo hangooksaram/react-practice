@@ -15,6 +15,7 @@ import Info from './useEffectPractice/Info'
 import Reducer from './useReducerPractice/ReducerCounter'
 import Average from './useMemo/Average'
 import Map from './MapPractice2/Input'
+import TodoList from './TodoList/TodoListMain'
 class App extends Component {
   render(){
   return (
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path = "/reducer" component = {Reducer}/>
           <Route path = "/average" component = {Average}/>
           <Route path = "/map" component = {Map}/>
+          <Route path = "/todo" component = {TodoList}/>
         </Switch>
       </Router>
   );

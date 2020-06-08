@@ -36,6 +36,7 @@ export default class Home extends Component {
                     <ul><NavLink to = "/reducer">useReducer</NavLink></ul>
                     <ul><NavLink to = "/average">useMemo</NavLink></ul>
                     <ul><NavLink to = "/map">map</NavLink></ul>
+                    <ul><NavLink to = "/todo">todolist</NavLink></ul>
             </Route>
         </div>
         )
