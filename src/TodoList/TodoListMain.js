@@ -17,6 +17,21 @@ const TodoListMain = () => {
         },
     ])
 
+    {/*const onChecked = useCallback(
+        checked => {
+            setTodos
+        }
+    )*/}
+
+    const onToggle = useCallback(
+        id => {
+            setTodos(
+                todos.map(todo =>
+                    todo.id === id ? {...todo, checked : !todo.checked} : todo)
+            )
+        }, [todos]
+    )
+
     const nextId = useRef(3);
 
     const onInsert = useCallback(
@@ -27,6 +42,7 @@ const TodoListMain = () => {
                 checked: false,
             };
             setTodos(todos.concat(todo))
+            nextId.current += 1
         }, [todos]
     )
 
@@ -39,7 +55,7 @@ const TodoListMain = () => {
         <div>
             <TodoTemplate>
                 <TodoInsert onInsert = {onInsert}/>
-                <TodoList onRemove = {onRemove} todos = {todos}/>
+                <TodoList onToggle = {onToggle} onRemove = {onRemove} todos = {todos}/>
             </TodoTemplate>
         </div>
     )

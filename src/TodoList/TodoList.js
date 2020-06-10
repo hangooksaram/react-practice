@@ -1,11 +1,11 @@
 import React from 'react'
 import './scss/TodoList.scss'
 import TodoListItem from './TodoListItem'
-const TodoList = ({todos, onRemove}) => {
+const TodoList = ({todos, onRemove, onToggle}) => {
     return(
         <div className = "TodoList">
             {todos.map(todo => (
-                <TodoListItem onRemove = {onRemove} todo = {todo} key = {todo.id}/>
+                <TodoListItem onToggle = {onToggle} onRemove = {onRemove} todo = {todo} key = {todo.id}/>
                 
             ))}
             {console.log(onRemove)}
