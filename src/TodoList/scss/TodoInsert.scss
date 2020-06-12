@@ -1,14 +1,27 @@
 .TodoInsert {
     display: flex;
-    background-color : #495057;
-    input {
-        background : none;
+    .input {
         outline : none;
-        border-right : 1px solid #495057;
+        border : none;
+        border-bottom : 1px solid #495057;
         padding : 0.5rem;
         font-size : 1.125rem;
         line-height : 1.5;
-        color : white;
+        color : black;
+        &::placeholder {
+            color: #dee2e6;
+        }
+        flex : 1;
+        margin-right: 2.0rem;
+    }
+    .inputtwo {
+        outline : none;
+        border : none;
+        border-bottom : 1px solid #495057;
+        padding : 0.5rem;
+        font-size : 1.125rem;
+        line-height : 1.5;
+        color : black;
         &::placeholder {
             color: #dee2e6;
         }
@@ -18,8 +31,8 @@
         background : none;
         outline : none;
         border : none;
-        background : #868e96;
-        color : white;
+        background : white;
+        color :#495057;
         padding-left : 1rem;
         padding-right : 1rem;
         font-size : 1.5rem;

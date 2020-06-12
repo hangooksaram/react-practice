@@ -21,14 +21,11 @@ const TodoInsert = ({ onInsert, item }) => {
     return (
         <div>
             <form className="TodoInsert" onSubmit={onSubmit}>
-                <input value={value} onChange={onChange} placeholder={isItem.length === 2 ? "할 일이 없습니다. 할 일을 입력해주세요." : "할 일을 입력하세요"} />
-                <input value={detail} onChange={onChangeDetail} placeholder={isItem.length === 2 ? "할 일이 없습니다. 할 일을 입력해주세요." : "상세 내용을 적어주세요"} />
+                <input className = "input" value={value} onChange={onChange} placeholder={isItem.length === 2 ? "할 일이 없습니다." : "할 일을 입력하세요"} />
+                <input className = "inputtwo" value={detail} onChange={onChangeDetail} placeholder={isItem.length === 2 ? "할 일을 입력해주세요." : "상세 내용을 적어주세요"} />
                 <button type="submit">
                     <MdAdd />
                 
-                </button>
-                <button type="submit">
-                    <MdAdd />
                 </button>
             </form>
         </div>

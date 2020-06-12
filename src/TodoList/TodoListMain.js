@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import TodoTemplate from './TodoTemplate'
 import TodoInsert from './TodoInsert'
 import TodoList from './TodoList'
@@ -11,8 +12,8 @@ const TodoListMain = () => {
         id: 0,
         text: '',
         checked: false,
-        date : '',
-        detail : ''
+        date: '',
+        detail: ''
     }
     ])
     const onToggle = useCallback(
@@ -36,7 +37,7 @@ const TodoListMain = () => {
                 id: nextId.current,
                 text,
                 checked: false,
-                date : <Moment format = "YYYY MMMM DD HH:mm"/>,
+                date: <Moment format="YYYY MMMM DD HH:mm" />,
                 detail
             };
             setTodos(todos.concat(todo))
@@ -51,17 +52,17 @@ const TodoListMain = () => {
 
     const onDetail = useCallback(
         id => {
-            return(
+            return (
                 <div>{todos.find(todo => todo.id === id)}</div>
             )
         }
-    ,[todos])
+        , [todos])
     return (
         <div>
-            <div className = "clock"><TodoListClock/></div>
+            <div className="clock"><TodoListClock /></div>
             <TodoTemplate>
-                <TodoInsert onInsert={onInsert} item = {todos}  />
-                {nextId.current === 1 || isItem.length ===2 ? <div className="first">첫 번째 할일을 입력</div> : <TodoList onToggle={onToggle} onRemove={onRemove} onDetail = {onDetail} todos={nftodos} />}
+                <TodoInsert onInsert={onInsert} item={todos} />
+                {nextId.current === 1 || isItem.length === 2 ? <div className="first">첫 번째 할일을 입력</div> : <TodoList onToggle={onToggle} onRemove={onRemove} onDetail={onDetail} todos={nftodos} />}
 
             </TodoTemplate>
         </div>
