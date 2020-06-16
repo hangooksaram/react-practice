@@ -30,7 +30,7 @@
     .remove { 
         display : flex;
         align-items : center;
-        font-size : 1.5rem;
+        font-size : 1rem;
         color : #ff6b6b;
         padding-left : 1rem;
         cursor : pointer;
@@ -39,6 +39,17 @@
         }
     }
 
+    .detail { 
+        display : flex;
+        align-items : center;
+        font-size : 1rem;
+        color : 'black';
+        padding-left : 1rem;
+        cursor : pointer;
+        &:hover {
+            color : #ff8787;
+        }
+    }
 
     & {
         border : 1px solid #dee2e6;

@@ -47,7 +47,7 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
                 <div className="remove" onClick={() => onRemove(id)} >
                     <MdRemoveCircleOutline />
                 </div>
-                <div className="remove" onClick={() => { openModal() }}><MdArrowForward /></div>
+                <div className="detail" onClick={() => { openModal() }}>더 보기<MdArrowForward /></div>
                 <Modal style={modalStyles} onRequestClose={closeModal} isOpen={modalOpen}>
                     <div style = {{display : 'flex'}}><div style = {{marginLeft : 'auto'}}  onClick={closeModal}><MdClear/></div></div>
                     <text style = {{textAlign : 'center'}}><TodoListDetail item={todo} /></text>

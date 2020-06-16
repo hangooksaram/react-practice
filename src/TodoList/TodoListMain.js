@@ -7,6 +7,7 @@ import TodoListClock from './TodoListClock'
 import Moment from 'react-moment'
 import './scss/TodoListMain.scss'
 import './scss/TodoListClock.scss'
+
 const TodoListMain = () => {
     const [todos, setTodos] = useState([{
         id: 0,
@@ -29,7 +30,6 @@ const TodoListMain = () => {
     ))
     const nextId = useRef(1);
     const isItem = Object.getOwnPropertyNames(todos);
-
 
     const onInsert = useCallback(
         (text, detail) => {

@@ -10,6 +10,7 @@ const TodoInsert = ({ onInsert, item }) => {
     const onChangeDetail = useCallback(e => {
         setDetail(e.target.value)
     }, [])
+    
     let isItem = Object.getOwnPropertyNames(item)
     const onSubmit = useCallback(e => {
         onInsert(value, detail);

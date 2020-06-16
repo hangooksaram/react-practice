@@ -1,9 +1,12 @@
 import React from 'react'
 
-const TodoListDetail = ({item}) => {
-    const {detail} = item
+const TodoListDetail = ({ item }) => {
+    const { detail, text } = item
     return (
-        <div>{detail}</div>
+        <div>
+            <h3>{text}</h3>
+            <div>{detail}</div>
+        </div>
     )
 }
 
