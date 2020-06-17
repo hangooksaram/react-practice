@@ -4,7 +4,7 @@ const TodoListDetail = ({ item }) => {
     const { detail, text } = item
     return (
         <div>
-            <h3>{text}</h3>
+            <h2>{text}</h2>
             <div>{detail}</div>
         </div>
     )
