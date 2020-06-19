@@ -4,7 +4,9 @@ import Moment from 'react-moment'
 
 const TodoListClock = () => {
     return (
-        <Moment interval = {1000}/>
+        <div>
+            <Moment interval={1000} />
+        </div>
     )
 }
 
