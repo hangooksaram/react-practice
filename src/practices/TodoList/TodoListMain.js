@@ -5,8 +5,8 @@ import TodoInsert from './TodoInsert'
 import TodoList from './TodoList'
 import TodoListClock from './TodoListClock'
 import Moment from 'react-moment'
-import './scss/TodoListMain.scss'
-import './scss/TodoListClock.scss'
+import '../../scss/TodoList/TodoListMain.scss'
+import '../../scss/TodoList/TodoListClock.scss'
 
 const TodoListMain = () => {
     const [todos, setTodos] = useState([{

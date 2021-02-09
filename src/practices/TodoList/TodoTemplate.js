@@ -1,5 +1,5 @@
 import React from 'react'
-import './scss/TodoListTemplate.scss'
+import '../../scss/TodoList/TodoListTemplate.scss'
 const TodoTemplate = ({children}) =>{
     return(
         <div className = "TodoTemplate">

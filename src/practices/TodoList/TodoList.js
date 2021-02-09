@@ -1,5 +1,5 @@
 import React from 'react'
-import './scss/TodoList.scss'
+import '../../scss/TodoList/TodoList.scss'
 import TodoListItem from './TodoListItem'
 const TodoList = ({ todos, onRemove, onDetail ,onToggle}) => {
     return(

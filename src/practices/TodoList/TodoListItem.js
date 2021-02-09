@@ -4,7 +4,7 @@ import { MdCheckBoxOutlineBlank, MdCheckBox, MdRemoveCircleOutline, MdArrowForwa
 import cn from 'classnames'
 import TodoListDetail from './TodoListDetail'
 import Modal from 'react-modal'
-import './scss/TodoListItem.scss'
+import '../../scss/TodoList/TodoListItem.scss'
 
 const TodoListItem = ({ todo, onRemove, onToggle }) => {
     const { id, text, checked, date } = todo;

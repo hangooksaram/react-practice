@@ -1,40 +1,37 @@
 import React, {Component} from 'react';
-import './App.css';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Home from './Home';
-import InputForm from './MapPractice2/InputForm';
-import Input from './MapPractice2/Input'
-import State from './State'
-import Props from './Props'
-import Class from  './ClassPractice/Class'
-import Say from './FunctionPractice/Say'
-import EventPractice from './EventPractice/EventPractice'
-import ValidationSample from './RefPractice/ValidationSample'
-import IterationSample from './MapPractice/IterationSample'
-import Info from './useEffectPractice/Info'
-import Reducer from './useReducerPractice/ReducerCounter'
-import Average from './useMemo/Average'
-import Map from './MapPractice2/Input'
-import TodoList from './TodoList/TodoListMain'
+import Input from './practices/MapPractice2/Input'
+import EventPractice from './practices/EventPractice/EventPractice'
+import ValidationSample from './practices/RefPractice/ValidationSample'
+import IterationSample from './practices/MapPractice/IterationSample'
+import Info from './practices/useEffectPractice/Info'
+import Reducer from './practices/useReducerPractice/ReducerCounter'
+import Average from './practices/useMemo/Average'
+import Map from './practices/MapPractice2/Input'
+import TodoList from './practices/TodoList/TodoListMain'
+import MenuBar from './component/MenuBar';
+import './scss/global.scss'
+
+
 class App extends Component {
   render(){
   return (
       <Router>
+        <MenuBar/>
         <Switch>
+          <div className="container">
           <Route exact path = "/" component = {Home}/>
           <Route path = "/input" component = {Input}/>
-          <Route path = "/state" component = {State}/>
-          <Route path = "/props" component = {Props}/>
-          <Route path = "/class" component = {Class}/>
-          <Route path = "/say" component = {Say}/>
-          <Route path = "/event" component = {EventPractice}/>
-          <Route path = "/validation" component = {ValidationSample}/>
-          <Route path = "/iteration" component = {IterationSample}/>
-          <Route path = "/info" component = {Info}/>
-          <Route path = "/reducer" component = {Reducer}/>
-          <Route path = "/average" component = {Average}/>
+          <Route path = "/eventpractice" component = {EventPractice}/>
+          <Route path = "/ref" component = {ValidationSample}/>
+          <Route path = "/map" component = {IterationSample}/>
+          <Route path = "/useEffect" component = {Info}/>
+          <Route path = "/useReducer" component = {Reducer}/>
+          <Route path = "/useMemo" component = {Average}/>
           <Route path = "/map" component = {Map}/>
-          <Route path = "/todo" component = {TodoList}/>
+          <Route path = "/todolist" component = {TodoList}/>
+          </div>
         </Switch>
       </Router>
   );

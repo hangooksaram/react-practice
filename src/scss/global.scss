@@ -1,0 +1,27 @@
+.container {
+  height: 70vh;
+  width: 50vw;
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 3s ease-in;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#root {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
