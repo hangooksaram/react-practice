@@ -7,6 +7,9 @@
   justify-content: space-between;
   align-items: center;
   margin-right: 10%;
+  position: absolute;
+  top: 10%;
+  right: 55%;
 }
 
 .menu-list {
@@ -16,4 +19,20 @@
   &:hover {
     color: rgb(255, 94, 0);
   }
+}
+
+.menu-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.menu-enter.menu-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.menu-exit {
+  opacity: 0;
+}
+.menu-exit-active {
 }

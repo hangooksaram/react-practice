@@ -1,11 +1,9 @@
-import React, {Component} from 'react'
-import {Route, NavLink} from 'react-router-dom'
-export default class Home extends Component {
-    render(){
+import React from 'react'
+const Home = ()=> {    
         return(
         <div>
            home
         </div>
-        )
-    }
+        )    
 }
+export default Home;

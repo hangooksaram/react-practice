@@ -1,35 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ValidationSample.css'
 
-class ValidationSampleComponent extends React.Component {
-    state = {
+const ValidationSampleComponent = () => {
+    let input;
+    const validation = {
         pw : '',
         clicked : false,
         validated : false
     }
-
-    handleChange = (e) => {
-        this.setState({
-            pw : e.target.value
-        })
+    const [validate, setValidate] = useState(validation);
+    const { pw, clicked, validated } = validate;
+    const handleChange = (e) => {
+        const { value } = e.target;        
+        setValidate({...validate, pw : value});
     }
 
-    handleButtonClick = () => {
-        this.setState({
-            clicked : true,
-            validated : this.state.pw === '0000'
-        })
-        this.input.focus();
+    const handleButtonClick = () => {
+        setValidate({...validate, clicked : true, validated : pw === '0000'});
+        input.focus();
     }
-
-    render(){
-        return(
-            <div>
-                <input ref = {(ref) => this.input = ref} type = "password" value = {this.state.pw} onChange = {this.handleChange} className = {this.state.clicked ? (this.state.validated ? 'sucess':'failure') : ''} />
-                <button onClick = {this.handleButtonClick}>검증하기</button>
-            </div>
-        )
-    }
+    
+    return(
+        <div>
+            <input ref = {(ref) => input = ref} type = "password" value = {pw} onChange = {handleChange} className = {clicked ? (validated ? 'sucess':'failure') : ''} />
+            <button onClick = {handleButtonClick}>검증하기</button>
+        </div>
+    )    
 }
 
 export default ValidationSampleComponent

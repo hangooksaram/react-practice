@@ -1,41 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default class InputForm extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            name : '',
-            phone : ''
-        }
+const InputForm = ({onCreate})=> {        
+    const form = {name : '', phone :''};
+    const [input, setInput]= useState(form);
+    const {name, phone} = input;
+    const handleChange = (e) => {
+        const { value, name } = e.target;        
+        setInput({...input, [name] : value});
     }
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name] : e.target.value,
-            [e.target.name] : e.target.value
-        })
-    }
-
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.props.onCreate(this.state);
-        this.setState({
-            name : '',
-            phone : ''
-        })
+        const { name } = e.target;   
+        onCreate(input);
+        setInput({...input, name : '', phone : ''});
     }
-
-    render(){
     return(
         <div>
-            <form onSubmit = {this.handleSubmit}>
-                <input placeholder = "이름을 입력하시오" name = "name" value = {this.state.name} onChange = {this.handleChange}/>
-                <input placeholder = "나이를 입력하시오" name = "phone" value = {this.state.phone} onChange = {this.handleChange}/>
+            <form onSubmit = {handleSubmit}>
+                <input placeholder = "이름" name = "name" value = {name} onChange = {handleChange}/>
+                <input placeholder = "폰번" name = "phone" value = {phone} onChange = {handleChange}/>
                 <button type = "submit">등록</button>
             </form>
             {/*{this.state.name}*/}
             {/*{this.state.phone}*/}
         </div>
     )
-    }
 }
+
+export default InputForm;
