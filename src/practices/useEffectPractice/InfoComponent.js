@@ -30,7 +30,7 @@ const InfoComponent = () => {
             console.log('clean up');
             console.log(number);
     };
-    }, [number]);
+    }, [number, snake]);
 
     const onChangeName = e => {
         setName(e.target.value);
