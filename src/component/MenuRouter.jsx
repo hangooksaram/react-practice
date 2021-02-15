@@ -38,17 +38,20 @@ const MenuRouter =()=>{
                 key={location.key}
             >                    
                 <Switch location={location}>
-                  <div className="container">                             
-                    <Route exact path = "/" component = {Home}/>         
-                      {ROUTE_PATH.map(({path, practiceComponent, descComponent})=> 
-                         <Route path = {`/${path}`}>
-                           <NestedRoute 
-                              practiceComponent = {practiceComponent} 
-                              descComponent={descComponent}
-                            />
-                         </Route>
-                      )}                       
-                  </div>
+                  <React.Fragment>
+                    <div className="container">                             
+                      <Route exact path = "/" component = {Home}/>         
+                        {ROUTE_PATH.map(({path, practiceComponent, descComponent})=> 
+                           <Route key={path} path = {`/${path}`}>
+                             <NestedRoute 
+                                key={path}
+                                practiceComponent = {practiceComponent} 
+                                descComponent={descComponent}
+                              />
+                           </Route>
+                        )}                       
+                    </div>
+                  </React.Fragment>
                 </Switch>
             </CSSTransition>
         </TransitionGroup>
@@ -59,7 +62,7 @@ const NestedRoute = ({practiceComponent, descComponent}) =>{
   return(
     <>
       <NavLink className="menu-list__desc" to = {`${url}/desc`}>설명</NavLink>
-      <NavLink className="menu-list__practice" to = {`${url}/practice`}>연습</NavLink>
+      <NavLink className="menu-list__practice" to = {`${url}/practice`}>예제</NavLink>
       <Switch>        
           <Route exact path={`${path}`}/>
             <div className="desc"><Route path={`${path}/desc`} component={descComponent}/>

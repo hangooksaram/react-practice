@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
+import DescLink from './../../component/DescLink';
 
 const UseMemoDesc = ()=>{
+    const [open, setOpen] = useState(false);
     return(
         <>            
-            이건 유즈 메모이구요~
+        <p>
+            <DescLink open={open} setOpen ={setOpen} link={'ref'} content={"aaaaaaaaaaaaa"}/>
+            </p>     
         </>
     )
 }

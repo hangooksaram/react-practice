@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 
 function reducer(state, action) {
     return{
@@ -8,8 +8,6 @@ function reducer(state, action) {
 }
 
 const InfoComponent = () => {
-    const [name, setName] = useState('');
-    const [nickname, setNickname] = useState('');
     const [state, dispatch] = useReducer(reducer, {
         number : '',
         snake : ''
@@ -32,14 +30,6 @@ const InfoComponent = () => {
     };
     }, [number, snake]);
 
-    const onChangeName = e => {
-        setName(e.target.value);
-    }
-
-    const onChangeNickName = e => {
-        setNickname(e.target.value);
-    }
-
     return(
         <div>
             <div>
@@ -48,14 +38,6 @@ const InfoComponent = () => {
                     <div>
                         숫자 : {number}
                         뱀 : {snake}
-                    </div>
-            </div>
-            <div>
-                <input type = "text" value = {name} onChange = {onChangeName}/>
-                <input type = "text" value = {nickname} onChange = {onChangeNickName}/>
-                    <div>
-                        이름 : {name}
-                        별명 : {nickname}
                     </div>
             </div>
         </div>
