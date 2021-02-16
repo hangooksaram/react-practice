@@ -27,10 +27,11 @@
 }
 
 .desc-link {
-  text-decoration: none;
-  color: rgb(255, 94, 0);
+  text-decoration: underline;
+  background-color: rgb(255, 195, 172);
+  color: black;
   //position: relative;
-  cursor: help;
+  cursor: pointer;
 }
 
 .desc-popup {
@@ -38,16 +39,16 @@
   color: black;
   border: 1px solid black;
   padding: 10px 10px;
-  background-color: white;
-  animation: fade-in 0.8s ease-in-out;
+  background-color: rgb(255, 195, 172);
+  animation: fade-in 0.5s ease-out;
 }
 
 @keyframes fade-in {
   0% {
-    opacity: 0;
+    opacity: 0.2;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.8;
   }
   100% {
     opacity: 1;

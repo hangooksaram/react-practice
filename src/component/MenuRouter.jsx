@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import {Route, Switch, useLocation, useRouteMatch, NavLink} from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Home from '../Home';
@@ -7,6 +7,7 @@ import Info from '../practices/useEffectPractice/Info'
 import Reducer from '../practices/useReducerPractice/ReducerCounter'
 import Average from '../practices/useMemo/Average'
 import RefDesc from './../practices/RefPractice/RefDesc';
+import ForWardRefDesc from './../practices/RefPractice/forwardRef/ForwardRefDesc';
 import UseEffectDesc from './../practices/useEffectPractice/UseEffectDesc';
 import UseReducerDesc from './../practices/useReducerPractice/UseReducerDesc';
 import UseMemoDesc from './../practices/useMemo/UseMemoDesc';
@@ -15,16 +16,16 @@ import '../scss/MenuBar.scss'
 
 const ROUTE_PATH = [
   {
-    path : 'useRef', practiceComponent : ValidationSample, descComponent : RefDesc
+    path : 'useRef', nest : "", nestComponent : "", practiceComponent : ValidationSample, descComponent : RefDesc
   },
   {
-    path : 'useEffect', practiceComponent : Info, descComponent : UseEffectDesc
+    path : 'useEffect', nest : "", nestComponent : ForWardRefDesc, practiceComponent : Info, descComponent : UseEffectDesc
   },
   {
-    path : 'useReducer', practiceComponent : Reducer, descComponent : UseReducerDesc
+    path : 'useReducer', nest : "", nestComponent: "", practiceComponent : Reducer, descComponent : UseReducerDesc
   },
   {
-    path : 'useMemo', practiceComponent : Average, descComponent : UseMemoDesc
+    path : 'useMemo', nest : "", nestComponent : "", practiceComponent : Average, descComponent : UseMemoDesc
   },
   
 ]
@@ -41,12 +42,14 @@ const MenuRouter =()=>{
                   <React.Fragment>
                     <div className="container">                             
                       <Route exact path = "/" component = {Home}/>         
-                        {ROUTE_PATH.map(({path, practiceComponent, descComponent})=> 
+                        {ROUTE_PATH.map(({path, nest, nestComponent, practiceComponent, descComponent})=> 
                            <Route key={path} path = {`/${path}`}>
                              <NestedRoute 
                                 key={path}
+                                nest ={nest}
                                 practiceComponent = {practiceComponent} 
                                 descComponent={descComponent}
+                                nestComponent ={nestComponent}                                
                               />
                            </Route>
                         )}                       
@@ -57,7 +60,7 @@ const MenuRouter =()=>{
         </TransitionGroup>
     )
 }
-const NestedRoute = ({practiceComponent, descComponent}) =>{
+const NestedRoute = ({nest, nestComponent, practiceComponent, descComponent}) =>{
   let { path, url } = useRouteMatch();  
   return(
     <>
@@ -65,7 +68,9 @@ const NestedRoute = ({practiceComponent, descComponent}) =>{
       <NavLink className="menu-list__practice" to = {`${url}/practice`}>예제</NavLink>
       <Switch>        
           <Route exact path={`${path}`}/>
-            <div className="desc"><Route path={`${path}/desc`} component={descComponent}/>
+            <div className="desc">
+              <Route path={`${path}/desc`} component={descComponent}/>
+              <Route path={`${path}/${nest}/desc`} component={nestComponent}/>
               <Route path={`${path}/practice`} component={practiceComponent}/>        
             </div>
       </Switch>

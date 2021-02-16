@@ -1,33 +1,29 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useState,useEffect, useReducer } from 'react'
 
 function reducer(state, action) {
     return{
         ...state,
         [action.name] : action.value
-    };
-}
+    }
+};
 
 const InfoComponent = () => {
     const [state, dispatch] = useReducer(reducer, {
         number : '',
         snake : ''
     });
-
-    const { number, snake } = state;
+    const [times, setTimes] = useState(0);
+    const { number, snake } = state;    
+    const [clean, setClean] = useState(0);
     const onChange = e => {
         dispatch(e.target);
     }
 
-    useEffect(()=>{
-        console.log('rendering complete');
-        console.log({
-            number,
-            snake
-        });
+    useEffect(()=>{        
+        setTimes(times=>times+1);
         return () => {
-            console.log('clean up');
-            console.log(number);
-    };
+            setClean(clean=>clean+1);
+        };
     }, [number, snake]);
 
     return(
@@ -36,8 +32,14 @@ const InfoComponent = () => {
                 <input type = "text" name = "number" value = {number} onChange = {onChange}/>
                 <input type = "text" name = "snake" value = {snake} onChange = {onChange}/>
                     <div>
-                        숫자 : {number}
+                        숫자 : {number} 
                         뱀 : {snake}
+                    </div>
+                    <div>
+                        useeffect는 {times} 번 실행되었군요!
+                    </div>
+                    <div>
+                        덩달아 cleanup 함수도 {clean} 번 실행되었군요!
                     </div>
             </div>
         </div>
