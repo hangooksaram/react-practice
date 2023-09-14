@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 
-function reducer(state, action) {
+function reducerCounter(state, action) {
   switch (action.type) {
     case "INCREASE":
       return { number: state.number + 1 };
@@ -11,8 +11,8 @@ function reducer(state, action) {
   }
 }
 
-const ReducerCounter = () => {
-  const [state, dispatch] = useReducer(reducer, { number: 0 });
+const UseReudcerPage = () => {
+  const [state, dispatch] = useReducer(reducerCounter, { number: 0 });
   return (
     <div>
       값 : {state.number}
@@ -24,4 +24,4 @@ const ReducerCounter = () => {
   );
 };
 
-export default ReducerCounter;
+export default UseReudcerPage;
