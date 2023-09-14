@@ -1,15 +1,8 @@
-import React  from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
-import MenuBar from './component/MenuBar';
-import MenuRouter from './component/MenuRouter';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-const App =() =>{      
-  return (
-      <Router>
-        <MenuBar/>
-        <MenuRouter/>
-      </Router>
-  );
-}
+const App = () => {
+  return <Router></Router>;
+};
 
 export default App;
